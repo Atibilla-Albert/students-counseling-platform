@@ -1,0 +1,31 @@
+.App {
+    text-align: center;
+    transition: background-image 0.5s ease-in-out;
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .App-header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background to improve text readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .quote {
+    font-size: 1.5rem;
+    margin: 0;
+    max-width: 90%;
+  }
+  

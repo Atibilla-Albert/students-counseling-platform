@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/NAVBAR.css";
 import { Link } from "react-router-dom";
+import SignOut from "../firebase/signout";
 
 
 const Navbar = ({ toggleChat }) => {
@@ -60,7 +61,7 @@ const Navbar = ({ toggleChat }) => {
         >
         <FontAwesomeIcon icon={faCommentDots} /> Live Chat
       </Link>
-      <Link to="/auth">Sign Out</Link>
+      
       </ul>
 
 

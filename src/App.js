@@ -1,33 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter,Routes, Route,Navigate } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home";
-import Auth from "./firebase/auth";
+// /src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignIn from "./firebase/SignIn";
+import SignUp from "./firebase/SignUp";
+import Home from "./pages/Home"
 import LiveChat from "./components/LiveChat";
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../src/firebase/firebase'
 
-
-function App() {
-  const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser(user);
-        });
-        return () => unsubscribe();
-    }, []);
+const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-        <Route path="/auth" element={<Auth setUser={setUser} />} />
-        <Route path="/" element={user ? <Home user={user} setUser={setUser} /> : <Navigate to="/auth" />} />
-        <Route path="/livechat" element={<LiveChat/>}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/livechat" element={<LiveChat />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -20,3 +20,5 @@ const database = getDatabase(app);
 
 export { auth, database };
 
+// export const auth = getAuth(app);
+

@@ -14,7 +14,9 @@ const SignIn = () => {
     e.preventDefault();
     setError("");
 
-    try {
+ 
+
+ try {
       const user = await signIn(email, password);
       console.log("Signed in user:", user);
       navigate("/")
@@ -44,6 +46,8 @@ const SignIn = () => {
           required
         />
         <button type="submit">Sign In</button>
+
+
       </form>
     </div>
   );
